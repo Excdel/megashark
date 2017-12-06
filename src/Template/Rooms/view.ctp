@@ -39,4 +39,11 @@
             <td><?= h($room->modified) ?></td>
         </tr>
     </table>
+    <div class="related">
+        <h4><?= __('Planning Showtimes') ?></h4>
+        <?php foreach ($showtimes as $showtime) {
+        echo $showtime -> room_id;
+        echo $showtime -> movie_name;
+        }?>
+    </div>
 </div>
