@@ -42,8 +42,22 @@
     <div class="related">
         <h4><?= __('Planning Showtimes') ?></h4>
         <?php foreach ($showtimes as $showtime) {
-        echo $showtime -> room_id;
-        echo $showtime -> movie_name;
+            echo '<ul>';
+            echo '<li>'.$showtime -> movie -> name.'</li>';
+            echo '<li>'.$showtime -> start.'</li>';
+            echo '<li>'.$showtime -> movie -> duration.'</li>';
+            echo '</ul>';
         }?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Lundi') ?></th>
+                <th scope="col"><?= __('Mardi') ?></th>
+                <th scope="col"><?= __('Mercredi') ?></th>
+                <th scope="col"><?= __('Jeudi') ?></th>
+                <th scope="col"><?= __('Vendredi') ?></th>
+                <th scope="col"><?= __('Samedi') ?></th>
+                <th scope="col"><?= __('Dimanche') ?></th>
+            </tr>
+        </table>
     </div>
 </div>
