@@ -55,16 +55,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i=1; $i<=7; $i++){
-                    foreach ($showtimesThisWeek[$i] as $showtime) {
-                        <td><?=
-                        echo '<ul>';
-                        echo '<li>'.$showtime -> movie -> name.'</li>';
-                        echo '<li>'.$showtime -> start.' / '.$showtime -> end.'</li>';
-                        echo '</ul>';
-                        ?></tdk>
-                    }
-                }?>
+                <?php for ($i=1; $i<=7; $i++): ?>
+                    <?php foreach ($showtimesThisWeek[$i] as $showtime) : ?>
+                        <tr>
+                            <td><?= h($showtime->movie -> name).('<br/>').h($showtime-> start).('<br/>').h($showtime -> end) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endfor; ?>
             </tbody>
         </table>
     </div>
